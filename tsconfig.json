@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "moduleResolution": "Node",
     "module": "ES6",
     "target": "ES6",
@@ -11,14 +10,7 @@
     "types": ["node"],
     "noEmit": true,
     "esModuleInterop": true,
-    "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@pageObjects": ["page_objects"],
-      "@pageObjects/*": ["page_objects/*"],
-      "@constants/*": ["constants/*"],
-      "@helpers/*": ["helpers/*"],
-      "@tests/*": ["tests/*"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": ["node_modules", "playwright-report", "test-results"]
 }
