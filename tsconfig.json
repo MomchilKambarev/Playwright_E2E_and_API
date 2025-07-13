@@ -1,15 +1,17 @@
+//add paths in the future
 {
   "compilerOptions": {
-    "moduleResolution": "Node",
     "module": "ES6",
+    "resolveJsonModule": true,
     "target": "ES6",
     "lib": ["DOM", "ES6"],
+    "esModuleInterop": true,
+    "noEmit": true,
+    "noImplicitThis": true,
+    "moduleResolution": "Node",
+    "types": ["node"],
     "allowJs": true,
     "checkJs": true,
-    "resolveJsonModule": true,
-    "types": ["node"],
-    "noEmit": true,
-    "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true
   },
   "exclude": ["node_modules", "playwright-report", "test-results"]
