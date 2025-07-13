@@ -1,14 +1,14 @@
 //add paths in the future
 {
   "compilerOptions": {
-    "module": "ES6",
+    "module": "Node16",
     "resolveJsonModule": true,
     "target": "ES6",
     "lib": ["DOM", "ES6"],
     "esModuleInterop": true,
     "noEmit": true,
     "noImplicitThis": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node16",
     "types": ["node"],
     "allowJs": true,
     "checkJs": true,

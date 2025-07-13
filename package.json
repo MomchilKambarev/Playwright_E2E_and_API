@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean-install": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + ; npm install",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -14,8 +15,7 @@
     "@types/node": "^24.0.7",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
-    "eslint": "^9.30.1",
-    "eslint-config-prettier": "^10.1.5",
+    "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.32.0",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",

@@ -1,35 +1,24 @@
-import tseslint from "typescript-eslint";
+import typescriptParser from "@typescript-eslint/parser";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import importPlugin from "eslint-plugin-import";
-import prettierConfig from "eslint-config-prettier";
-import js from "@eslint/js";
 
-export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-    languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        project: "./tsconfig.json",
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
-    },
-    plugins: {
-      import: importPlugin,
-    },
-    ...js.configs.recommended,
+export default {
+  parser: typescriptParser,
+  parserOptions: {
+    sourceType: "module",
+    ecmaVersion: "latest",
   },
-  ...tseslint.configs.recommended,
-  {
-    rules: {
-      "no-console": "off",
-      "no-undef": "off",
-      "no-useless-escape": "off",
-      "no-unused-expressions": ["off", { allowTernary: true }],
-      "@typescript-eslint/no-floating-promises": "error",
-      "import/no-unresolved": "off",
-      "import/no-extraneous-dependencies": "off",
-    },
+  plugins: {
+    "@typescript-eslint": typescriptPlugin,
+    import: importPlugin,
   },
-  prettierConfig,
-];
+  rules: {
+    "no-console": "off",
+    "no-undef": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    // 'import/extensions': ['error', 'never'],
+    "no-useless-escape": "off",
+    "no-unused-expressions": ["off", { allowTernary: true }],
+  },
+};
