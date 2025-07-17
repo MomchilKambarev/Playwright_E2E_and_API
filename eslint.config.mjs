@@ -1,24 +1,30 @@
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
 
-export default {
-  parser: typescriptParser,
-  parserOptions: {
-    sourceType: "module",
-    ecmaVersion: "latest",
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  {
+    plugins: {
+      import: importPlugin,
+    },
+    languageOptions: {
+      parserOptions: {
+        project: true,
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-floating-promises": "error",
+      "no-console": "off",
+      "no-undef": "off",
+      "import/no-unresolved": "off",
+      "import/no-extraneous-dependencies": "off",
+      "no-useless-escape": "off",
+      "no-unused-expressions": ["off", { allowTernary: true }],
+    },
   },
-  plugins: {
-    "@typescript-eslint": typescriptPlugin,
-    import: importPlugin,
-  },
-  rules: {
-    "no-console": "off",
-    "no-undef": "off",
-    "import/no-unresolved": "off",
-    "import/no-extraneous-dependencies": "off",
-    // 'import/extensions': ['error', 'never'],
-    "no-useless-escape": "off",
-    "no-unused-expressions": ["off", { allowTernary: true }],
-  },
-};
+  {
+    ignores: ["dist/**", "node_modules/**", "playwright.config.ts"],
+  }
+);

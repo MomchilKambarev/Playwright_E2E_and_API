@@ -1,18 +1,20 @@
-//add paths in the future
 {
   "compilerOptions": {
-    "module": "Node16",
-    "resolveJsonModule": true,
-    "target": "ES6",
+    "target": "ES2022",
+    "module": "NodeNext",
     "lib": ["DOM", "ES6"],
-    "esModuleInterop": true,
-    "noEmit": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "NodeNext",
+    "strict": true,
     "noImplicitThis": true,
-    "moduleResolution": "node16",
-    "types": ["node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "checkJs": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true
   },
-  "exclude": ["node_modules", "playwright-report", "test-results"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs"],
+  "exclude": ["node_modules"]
 }
