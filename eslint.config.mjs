@@ -12,6 +12,8 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         project: true,
+        sourceType: "module",
+        ecmaVersion: "latest",
       },
     },
     rules: {
@@ -22,6 +24,8 @@ export default tseslint.config(
       "import/no-extraneous-dependencies": "off",
       "no-useless-escape": "off",
       "no-unused-expressions": ["off", { allowTernary: true }],
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
   {
