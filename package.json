@@ -8,7 +8,7 @@
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Momchil Kambarev",
   "license": "ISC",
   "dependencies": {
     "@playwright/test": "^1.53.1",
